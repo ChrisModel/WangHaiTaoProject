@@ -1,0 +1,7 @@
+spring: 
+  datasource: 
+    url: jdbc:mysql://localhost:3306/examproject?autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: root
+    driver: com.mysql.jdbc.Driver
+  mybatis: yes
