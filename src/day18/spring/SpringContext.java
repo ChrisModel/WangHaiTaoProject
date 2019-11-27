@@ -55,6 +55,7 @@ public class SpringContext {
 			for (Field f : a) {//遍历每个变量
 				//如果变量上存在@Value, @Autowired注解,要执行自动注入(即赋值)
 				if (f.isAnnotationPresent(Value.class)) {
+					
 					//注入配置数据
 					injectValue(c, obj, f);
 				} else if(f.isAnnotationPresent(Autowired.class)) {
@@ -134,7 +135,7 @@ public class SpringContext {
 		}
 	}
 	
-	public <T> T getObject(Class<T> c) {
+	public <T>T getObject(Class<T> c) {
 		String n = c.getName(); //获得参数类对象的完整类名
 		return (T) map.get(n); //用类名作为键,提取对应的实例
 	} 
